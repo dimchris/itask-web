@@ -9,6 +9,11 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomepageComponent } from './homepage/homepage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchGameComponent } from './search-game/search-game.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { TutorProfilComponent } from './tutor-profil/tutor-profil.component';
+import { PreviewGameComponent } from './preview-game/preview-game.component';
+import { MakeGameComponent } from './make-game/make-game.component';
 
 
 
@@ -20,7 +25,12 @@ export function createTranslateLoader(http: HttpClient) {
 
 const appRoutes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: 'search', component:SearchGameComponent}
+  { path: 'search', component:SearchGameComponent},
+  { path: 'register', component:RegisterComponent},
+  { path: 'login', component:LoginComponent},
+  { path: 'profil', component:TutorProfilComponent},
+  { path: 'preview', component: PreviewGameComponent},
+  { path: 'make', component: MakeGameComponent}
   
 ];
 
@@ -31,7 +41,12 @@ const appRoutes: Routes = [
     AppComponent,
     NavigationBarComponent,
     HomepageComponent,
-    SearchGameComponent
+    SearchGameComponent,
+    RegisterComponent,
+    LoginComponent,
+    TutorProfilComponent,
+    PreviewGameComponent,
+    MakeGameComponent
   ],
   imports: [
     BrowserModule,

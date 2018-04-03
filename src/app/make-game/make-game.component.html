@@ -1,0 +1,92 @@
+
+
+
+<div style="width:90%; margin:auto; margin-top:50px; margin-bottom:50px" class="ui raised segment">
+  <h1 style="text-align:center" class="ui header">Διομόρφωση Παιχνιδιού</h1>
+</div>
+
+
+<div class="ui two columns grid">
+ 
+  <div style="width:500px; margin-left:100px" class="ui segment column">
+      <h2 style="text-align:center; margin-bottom:50px">Στοιχεία Παιχνιδιού</h2>
+
+      <div style="height:40px; width:470px; margin:auto" class="ui massive input">
+      <input type="text" name="first-name" placeholder="Όνομα Παιχνιδιού..">
+      </div>
+     
+      <div style="height:100px; width:470px; margin:auto; margin-top:40px" class="ui massive input">
+      <input type="text" name="first-name" placeholder="Περιγραφή Παιχνιδιού...">
+      </div>
+  </div>
+
+
+
+  <div style="width: 1000px; height:300px; margin-left:150px" class="ui column">
+      <div class="ui grid ">
+
+              <div *ngFor="let card of cards; index as i"  name="newskill" style="width:900px; height:400px" class="ui segment">
+
+                  <div class="ui grid two columns">
+
+                      <div class="ui column">
+                      <div style="width:350px" class="ui raised fluid card">
+                      <div style="height: 200px; width:350px" class="image">
+                          <img src="/images/avatar/large/daniel.jpg">
+                      </div>
+                      </div>
+
+
+                      
+                      <div style="height:50px; width:350px; margin:auto; margin-top:20px" class="ui button">
+                         <p style="font-size:20px">Εκαθάριση κάρτας</p>
+                      </div>
+
+                      <div (click)="delete(i)" style="height:50px; width:350px; margin:auto; margin-top:10px" class="ui button">
+                          <p style="font-size:20px">Διαγραφή κάρτας</p>
+                      </div>
+
+                      </div>
+                      
+
+
+                      <div style="width:400px; height:350px" class="ui segment column">
+
+                          <div style="height:40px; width:350px; margin:auto" class="ui massive input">
+                              <input type="text" name="first-name" placeholder={{i}}>
+                          </div>
+
+
+                          <div style="height:200px; width:350px; margin:auto; margin-top:40px" class="ui massive input">
+                              <input type="text" name="first-name" placeholder="Περιγραφή Κάρτας...">
+                          </div>
+                          
+                              
+                      </div>
+
+                  </div>
+                  
+              </div>
+
+              <div style="margin-right:90px; margin-bottom:50px" class="ui grid two columns row">
+              <div (click)="add()" style="width:300px; font-size:15px; height:40px; margin:auto; margin-top:50px" class="ui center aligned button ">
+                Προσθηκη νέας κάρτας
+              </div>
+
+              <div style="width:300px; font-size:15px; height:40px; margin:auto; margin-top:50px" class="ui center aligned button">
+                Αναζήτηση κάρτας από ιστορικό
+              </div>
+              </div>
+
+
+          </div>
+
+
+       
+
+  
+  </div>
+
+    
+
+</div>
