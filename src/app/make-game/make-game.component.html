@@ -27,6 +27,8 @@
 
               <div *ngFor="let card of cards; index as i"  name="newskill" style="width:900px; height:400px" class="ui segment">
 
+                  <form (ngSubmit)="onSubmit()" #form01>
+
                   <div class="ui grid two columns">
 
                       <div class="ui column">
@@ -37,8 +39,21 @@
                       </div>
 
 
+
+                      <div class="ui grid container">
                       
-                      <div style="height:50px; width:350px; margin:auto; margin-top:20px" class="ui button">
+                        <input style="width:0.1px; height:0.1px; opacity:0; overflow:hidden; position:absolute; z-index:-1 " type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput" />
+                      
+                        <label for="embedpollfileinput" class="ui tiny red right floated button">
+                          <i class="ui upload icon"></i> 
+                          Upload image
+                        </label>
+                       
+                      </div>
+
+
+                      
+                      <div (click)="put_values(cards[i].name, cards[i].description, i)" style="height:50px; width:350px; margin:auto; margin-top:20px" class="ui button">
                          <p style="font-size:20px">Εκαθάριση κάρτας</p>
                       </div>
 
@@ -53,18 +68,22 @@
                       <div style="width:400px; height:350px" class="ui segment column">
 
                           <div style="height:40px; width:350px; margin:auto" class="ui massive input">
-                              <input type="text" name="first-name" placeholder={{i}}>
+                              <input (input)='cards[i].name=$event.target.value'  type="text" id="namecard" name="namecard" placeholder="{{i}}">
                           </div>
-
 
                           <div style="height:200px; width:350px; margin:auto; margin-top:40px" class="ui massive input">
-                              <input type="text" name="first-name" placeholder="Περιγραφή Κάρτας...">
-                          </div>
-                          
+                              <input (input)='cards[i].description=$event.target.value' type="text area" id="description" name="description" placeholder={{cards[i].name}}>
+
+                              
+                          </div>  
+                        
                               
                       </div>
 
+
                   </div>
+
+                  </form>
                   
               </div>
 

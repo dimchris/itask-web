@@ -10,7 +10,6 @@ export class MakeGameComponent implements OnInit {
 
   cards;
   name;
-
   
   constructor() { }
 
@@ -18,16 +17,31 @@ export class MakeGameComponent implements OnInit {
   ngOnInit() {
 
     this.cards=[
-      {name: 'new'}
+      {name: '', description: '' }
     ]
   }
 
 
   add(){
-     
-      this.cards.push({name:'new'});
+      this.cards.push({name:'', description:''});
   }
 
+
+  put_values(name, description, counter){
+
+    for(var i=0; i<this.cards.length; i++)
+    {
+        if(i == counter)
+        {   
+           this.cards[i] = {"name": name, "description": description}
+        }
+    }
+     
+
+  }
+
+
+  
   delete(counter){
     for(var i=0; i<this.cards.length; i++)
     {

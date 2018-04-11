@@ -7,9 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
+  user;
+  showlogin;
+  showlogout;
+
   constructor() { }
 
+  
+
   ngOnInit() {
+
+    this.user = JSON.parse(localStorage.getItem('logedInUser'));
+    console.log(this.user);
+
+    if(this.user === null)
+    {
+       this.showlogin = true;
+       this.showlogout = false;
+    }
+    else{
+       this.showlogin = false;
+       this.showlogout = true;
+    }
+
+  }
+
+  logout(){
+
+    localStorage.removeItem('logedInUser');
   }
 
 }

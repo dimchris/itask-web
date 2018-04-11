@@ -6,46 +6,39 @@
 
 
 <div class="ui center aligned grid column">
-
   <div style="width:700px; margin-top:70px" class="ui segment column">
 
-      <form class="ui center aligned raised form">
 
-          <div style="width:600px; margin:auto; font-size:15px" class="field">
-            <label style="text-align: left">Όνομα</label>
-            <input type="text" name="first-name" placeholder="Όνομα">
-          </div>
-      
-          <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
-              <label style="text-align: left">Επίθετο</label>
-              <input type="text" name="first-name" placeholder="Επίθετο">
-            </div>
+    <form class="ui center aligned raised form" #userForm="ngForm" (ngSubmit)="signup(userForm.value.firstname, userForm.value.lastname, userForm.value.email, userForm.value.password)">
 
-            <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
-                <label style="text-align: left">Email</label>
-                <input type="text" name="first-name" placeholder="Email">
-              </div>
-              
-              <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
-                  <label style="text-align: left">Κωδικος Πρόσβασης</label>
-                  <input type="text" name="first-name" placeholder="Κωδικός πρόσβασης ">
-                </div>
+      <div style="width:600px; margin:auto; font-size:15px" class="field">
+        <label for="firstname" style="text-align: left">Όνομα</label>
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" placeholder="Όνομα" required>
+      </div>
 
-                <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
-                    <label style="text-align: left">Σχολείο</label>
-                    <input type="text" name="first-name" placeholder="Σχολείο">
-                  </div>
+      <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
+        <label for="lastname" style="text-align: left">Επίθετο</label>
+        <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" placeholder="Επίθετο">
+      </div>
 
-                  <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
-                      <label style="text-align: left">ΑΜΚΑ</label>
-                      <input type="text" name="first-name" placeholder="ΑΜΚΑ">
-                    </div>
+      <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
+        <label for="email" style="text-align: left">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email">
+      </div>
 
-      
-      
-          <button style="margin:auto; margin-top:20px; font-size:15px" class="ui button"  ng-click="/search" type="submit">Εγγραφή Καθηγητή</button>
-      
-        </form>
+      <div style="width:600px; margin:auto; margin-top:20px; font-size:15px" class="field">
+        <label for="password" style="text-align: left">Κωδικος Πρόσβασης</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Κωδικός πρόσβασης ">
+      </div>
+
+      <button style="margin:auto; margin-top:20px; font-size:15px" class="ui button" type="submit">Εγγραφή Καθηγητή</button>
+    </form>
+
+
+
+    <button routerLink="/home" style="margin:auto; margin-top:20px; font-size:15px" class="ui button" type="submit">Εγγραφή Καθηγητdededeή</button>
+
+
 
   </div>
 

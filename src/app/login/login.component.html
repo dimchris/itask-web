@@ -9,20 +9,19 @@
 
   <div style="width:700px; margin-top:70px" class="ui segment column">
 
-      <form class="ui center aligned raised form">
+      <form [formGroup]="form" class="ui center aligned raised form"  (ngSubmit)="login(form.value.email, form.value.password)">
 
           <div style="width:600px; margin:auto; font-size:18px" class="field">
             <label style="text-align: left">Όνομα Χρήστη</label>
-            <input type="text" name="first-name" placeholder="Όνομα χρήστη">
+            <input formControlName="email" type="email" id="email" name="email"  placeholder="Email">
           </div>
       
           <div style="width:600px; margin:auto; margin-top:20px; font-size:18px" class="field">
               <label style="text-align: left">Κωδικός Πρόσβασης</label>
-              <input type="text" name="first-name" placeholder="Κωδικός πρόσβασης">
+              <input formControlName="password" type="password" id="password" name="password"   placeholder="Κωδικός πρόσβασης">
             </div>
 
-      
-          <button style="margin:auto; margin-top:20px; font-size:20px" class="ui button"  type="submit"><a href="/profil">Είσοδος</a></button>
+          <button style="margin:auto; margin-top:20px; font-size:20px" class="ui button"  type="submit"> Είσοδος </button>
       
         </form>
 
@@ -33,6 +32,6 @@
 
 <div style="margin-top:100px" class="ui center aligned grid column">
 
-<h3 class="ui header">Δεν έχετε λογιαριασμό στην εφαρμογή; <a href="/register">Πατήστε εδώ</a> </h3>
+<h3 class="ui header">Δεν έχετε λογιαριασμό στην εφαρμογή; <a routerLink="/register" >Πατήστε εδώ</a> </h3>
 
 </div>
